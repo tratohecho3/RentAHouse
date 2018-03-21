@@ -1,0 +1,20 @@
+li {
+    list-style-type: none;
+}
+#price {
+    color: red;
+    text-align: right;
+
+}
+
+.jumbotron {
+    background-image: url("../../assets/img/3.JPG");
+    background-size: cover;
+    color: white;
+ 
+}
+
+#title {
+    text-align: center;
+    margin-bottom: 15px;
+}
