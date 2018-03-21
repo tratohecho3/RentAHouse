@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule,ApplicationRef  } from '@angular/core';
 
 import {HouseService} from './services/house.service';
 
@@ -9,6 +9,11 @@ import { RentalPropertiesComponent } from './rental-properties/rental-properties
 import { AppRoutingModule } from './/app-routing.module';
 import { HouseDetailComponent } from './house-detail/house-detail.component';
 
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
+
+import { AgmCoreModule } from '@agm/core';
 
 
 @NgModule({
@@ -19,7 +24,12 @@ import { HouseDetailComponent } from './house-detail/house-detail.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CommonModule,
+    FormsModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBfrD_r1FtnCNeSUqyUFIw-oTjxGB43EeA'
+    })
   ],
   providers: [HouseService],
   bootstrap: [AppComponent]

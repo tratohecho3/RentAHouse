@@ -7,5 +7,44 @@
               </button>
         </p>
 </div>
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-md-10">
+            <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{house_selected.name}} </h5>
+                        <p class="card-text">{{house_selected.description}} </p>
+                    </div>
+                    <img class="card-img-bottom" src="{{house_selected.img}}" alt={{house_selected.name}}>
+            </div>
+            
+        </div>
+    </div>
+    <div class="row justify-content-md-center">
+        <div class="col-md-10">
+                <div class="card text-center">
+                        <div class="card-header">
+                          <ul class="nav nav-tabs card-header-tabs">
+                            <li class="nav-item">
+                              <a class="nav-link active" href="#">Information</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="#">Google Maps</a>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="card-body">
+                          <h5 class="card-title">Information</h5>
+                          <p class="card-text"> <span class="subtitle">City:</span> {{house_selected.city}}</p>
+                          <p class="card-text"> <span class="subtitle">Type:</span>  {{house_selected.type}}</p>
+                          <p class="card-text"> <span class="subtitle">Price:</span>  {{house_selected.price}}</p>
+                          <a href="#" class="btn btn-success">Rent this {{house_selected.type}}</a>
+                        </div>
+                      </div>
+        </div>
+    </div>
+</div>
 
-{{house_selected.name}} 
+<agm-map [latitude]="lat" [longitude]="lng">
+    <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+</agm-map>

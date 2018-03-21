@@ -2,7 +2,13 @@
     background-image: url("../../assets/img/8.JPG");
     background-size: cover;
     color: white;
-    opacity: 0.99;
-
- 
+    opacity: 0.99; 
 }
+
+.subtitle {
+    font-weight: bold;
+}
+
+agm-map {
+    height: 300px;
+  }

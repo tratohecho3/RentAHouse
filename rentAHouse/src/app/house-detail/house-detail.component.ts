@@ -12,6 +12,8 @@ export class HouseDetailComponent implements OnInit {
   @Input() house: House;
   id = null;
   house_selected: House;
+  lat: number = 51.678418;
+  lng: number = 7.809007;
   constructor(private route: ActivatedRoute,private houseService: HouseService) {
     this.id = +this.route.snapshot.paramMap.get('id');
     this.house_selected = this.getHouse(this.id);
