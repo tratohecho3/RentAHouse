@@ -6,18 +6,19 @@
   
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" routerLink="/rentalproperties">Rental Properties <span class="sr-only">(current)</span></a>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/rentalproperties" routerLinkActive="active" >Rental Properties <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Owners</a>
+          <a class="nav-link" routerLink="/sell" routerLinkActive="active">Rent Your House</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Contact us</a>
         </li>
       </ul>
-      <button class="btn btn-outline-success my-2 my-sm-0 button" >Login</button>
-      <button class="btn btn-outline-success my-2 my-sm-0 button" routerLink="/signup">Sign up</button>
+      <button class="btn btn-outline-success my-2 my-sm-0 button" routerLink="/login" *ngIf="!loggedIn">Login</button>
+      <button class="btn btn-outline-success my-2 my-sm-0 button" routerLink="/signup" *ngIf="!loggedIn">Sign up</button>
+      <button class="btn btn-outline-success my-2 my-sm-0 button" *ngIf="loggedIn" (click)="logout()">Logout {{user}}</button>
     </div>
   </nav>
 

@@ -9,15 +9,20 @@ import { House } from '../house';
 })
 export class RentalPropertiesComponent implements OnInit {
 
-  houses:House[];
-  constructor(private houseService: HouseService) { }
+  houses= null;
+  constructor(private houseService: HouseService) { 
+    houseService.getHouses().valueChanges()
+      .subscribe(houses => {
+        this.houses = houses;
+        console.log(this.houses);
+      });
+    
+
+  }
 
   ngOnInit() {
-    this.getHouses();
   }
 
-  getHouses(){
-    this.houses = this.houseService.getHouses();
-  }
+
 
 }

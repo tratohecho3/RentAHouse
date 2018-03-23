@@ -11,7 +11,7 @@ import { HouseService } from '../services/house.service';
 export class HouseDetailComponent implements OnInit {
   @Input() house: House;
   id = null;
-  house_selected: House;
+  house_selected:any = {};
   my_boolean: string = 'information';
   current_route:string;
   show_info:boolean;
@@ -24,19 +24,13 @@ export class HouseDetailComponent implements OnInit {
 
   ngOnInit() {
     this.id = +this.route.snapshot.paramMap.get('id');
-    this.house_selected = this.getHouse(this.id);
+    this.getHouse(this.id).valueChanges()
+    .subscribe(house => {
+      this.house_selected = house;});
   }
 
   getHouse(id:number){
     return this.houseService.getHouse(id);
-  }
-
-
-  changesViewtoGM(){
-    this.my_boolean = 'gm';
-  }
-  changesViewtoInformation(){
-    this.my_boolean = 'information';
   }
 
 

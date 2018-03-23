@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule,ApplicationRef  } from '@angular/core';
 
 import {HouseService} from './services/house.service';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { RentalPropertiesComponent } from './rental-properties/rental-properties.component';
@@ -10,7 +10,7 @@ import { AppRoutingModule } from './/app-routing.module';
 import { HouseDetailComponent } from './house-detail/house-detail.component';
 
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+
 
 
 import { AgmCoreModule } from '@agm/core';
@@ -24,6 +24,8 @@ import {AngularFireAuthModule} from 'angularfire2/auth';
 import { environment } from '../environments/environment';
 import { HttpModule } from '@angular/http';
 import { AuthorizationService } from './services/authorization.service';
+import { LoginComponent } from './login/login.component';
+import { SellComponent } from './sell/sell.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +33,8 @@ import { AuthorizationService } from './services/authorization.service';
     HouseDetailComponent,
     ComparatorComponent,
     SignupComponent,
+    LoginComponent,
+    SellComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,6 +42,7 @@ import { AuthorizationService } from './services/authorization.service';
     CommonModule,
     HttpModule,
     FormsModule,
+    ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireDatabaseModule ,

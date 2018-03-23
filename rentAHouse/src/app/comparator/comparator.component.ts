@@ -10,17 +10,19 @@ import { House } from '../house';
 })
 export class ComparatorComponent implements OnInit {
 
-  houses:House[];
+  houses=null;
   lat: number = 4.6;
   lng: number = -74.0;
-  constructor(private houseService: HouseService) { }
-
-  ngOnInit() {
-    this.getHouses();
+  constructor(private houseService: HouseService) { 
+    houseService.getHouses().valueChanges()
+      .subscribe(houses => {
+        this.houses = houses;
+      });
+    
+    console.log(this.houses);
   }
 
-  getHouses(){
-    this.houses = this.houseService.getHouses();
+  ngOnInit() {
   }
 
 

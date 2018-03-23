@@ -3,7 +3,9 @@ export class House{
     name:string;
     price:number;
     description:string;
+    street:string;
     city:string;
+    country:string;
     type:string;
     img:string;
     lat:number;
