@@ -6,6 +6,7 @@ import { ComparatorComponent } from './comparator/comparator.component';
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { SellComponent } from './sell/sell.component';
+import { MyGuardService } from './services/my-guard.service';
 const routes: Routes = [
   { path: '',redirectTo:'/rentalproperties',pathMatch:'full'},
   { path: 'rentalproperties', component: RentalPropertiesComponent },
@@ -13,7 +14,7 @@ const routes: Routes = [
   { path: 'detail/:id', component: HouseDetailComponent },
   { path: 'signup', component: SignupComponent},
   { path: 'login', component: LoginComponent},
-  { path: 'sell', component: SellComponent}
+  { path: 'sell', component: SellComponent, canActivate:[MyGuardService]}
 
   
 

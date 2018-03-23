@@ -26,6 +26,7 @@ import { HttpModule } from '@angular/http';
 import { AuthorizationService } from './services/authorization.service';
 import { LoginComponent } from './login/login.component';
 import { SellComponent } from './sell/sell.component';
+import { MyGuardService } from './services/my-guard.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,7 +53,7 @@ import { SellComponent } from './sell/sell.component';
     }),
     
   ],
-  providers: [HouseService,AuthorizationService],
+  providers: [HouseService,AuthorizationService,MyGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
