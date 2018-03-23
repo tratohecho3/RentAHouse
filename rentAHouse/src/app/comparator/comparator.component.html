@@ -1,0 +1,69 @@
+<div class="jumbotron">
+  <h1 class="display-4">Hello, world!</h1>
+  <p class="lead">This is the biggest website to rent a House in Canada</p>
+  <hr class="my-4">
+  <p>It uses the best technology to find the best home for you</p>
+  <p class="lead">
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+          Learn More
+        </button>
+  </p>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      You can search the closest houses to you and compare all the caretheristics. Let the App works for you!
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-success" data-dismiss="modal">Ok!</button>
+    </div>
+  </div>
+</div>
+</div>
+<h3 id="title">Find your Home</h3>
+<ul class="nav justify-content-center">
+<li class="nav-item">
+  <button type="button" class="btn btn-primary button-comparator  " routerLink="/rentalproperties">Properties</button>
+
+</li>
+<li class="nav-item">
+  <button type="button" class="btn btn-success button-comparator" routerLink="/comparator">Comparator</button>
+</li>
+
+</ul>
+<div class="container">
+    <div class="row">
+      <div class="col-4">
+          <div class="col-12" *ngFor="let house of houses">
+              <div class="card" style="width: 18rem;">
+                  <img class="card-img-top" src={{house.img}} alt={{house.name}}>
+                  <div class="card-body">
+                    <h5 class="card-title">{{house.name}}</h5>
+                    <p class="card-text">{{house.description}}</p>
+                    
+                    <a routerLink="/detail/{{house.id}}" class="btn btn-primary">Go Details</a>
+                    <h5 id="price">{{house.price | currency}}</h5>
+                  </div>
+                </div> 
+            </div>
+            
+      </div>
+      <div class="col-8">
+          <agm-map [latitude]="lat" [longitude]="lng">
+              <agm-marker *ngFor="let house of houses" [latitude]="house.lat" [longitude]="house.lng"></agm-marker>
+          </agm-map>
+          
+          
+      </div>
+
+    </div>
+  </div>
+

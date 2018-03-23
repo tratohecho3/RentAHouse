@@ -18,6 +18,11 @@ li {
     text-align: center;
     margin-bottom: 15px;
 }
+
+agm-map {
+    height: 300px;
+  }
+
 .button-comparator {
     margin: 0 5px 0 5px;
 }

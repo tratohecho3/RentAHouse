@@ -6,4 +6,6 @@ export class House{
     city:string;
     type:string;
     img:string;
+    lat:number;
+    lng:number;
 }
